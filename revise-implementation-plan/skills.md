@@ -1,11 +1,10 @@
 ---
-
 name: revise-implementation-plan
 description: Revise an existing implementation plan after a discovered implementation problem. Determine whether the problem was caused by an execution failure, plan omission, or plan defect, then strengthen validation, append missing coverage, or correct the affected plan guidance so future executions do not repeat the problem. Invoke manually only.
 license: MIT
 metadata:
-version: "1.0"
---------------
+  version: "1.0"
+---
 
 # Revise Implementation Plan
 
@@ -21,11 +20,11 @@ The user must identify the existing `.PLAN.md` and describe or reference the dis
 
 Use available evidence to understand what happened. This may include:
 
-* the implementation that followed the plan;
-* the commit or diff that fixed the problem;
-* relevant tests;
-* repository history;
-* the user's description of the failure.
+- the implementation that followed the plan;
+- the commit or diff that fixed the problem;
+- relevant tests;
+- repository history;
+- the user's description of the failure.
 
 If the user references a fix commit, inspect it and its parent state. If the problem was fixed in the current working tree, inspect the relevant diff.
 
@@ -45,9 +44,9 @@ Instead, strengthen validation or acceptance criteria so the incorrect implement
 
 The validation must make clear:
 
-* what scenario is exercised;
-* what result is expected;
-* what constitutes failure.
+- what scenario is exercised;
+- what result is expected;
+- what constitutes failure.
 
 Prefer an automated regression test when practical. Otherwise add a deterministic verification.
 
@@ -59,11 +58,11 @@ Preserve the existing correct plan and append a new implementation step covering
 
 The new step must explain:
 
-* the previously uncovered case;
-* the required behavior;
-* where the implementation belongs;
-* how it integrates with the existing implementation;
-* how it is verified.
+- the previously uncovered case;
+- the required behavior;
+- where the implementation belongs;
+- how it integrates with the existing implementation;
+- how it is verified.
 
 Add or update acceptance criteria as needed.
 
@@ -86,12 +85,11 @@ Update any dependent steps, snippets, assumptions, validation, and acceptance cr
 3. Compare the evidence against the original plan. Determine whether this is an execution failure, plan omission, or plan defect. Classify based on evidence, not merely on what the eventual code fix changed.
 
 4. Before editing, briefly report:
-
-   * the discovered problem;
-   * the root cause;
-   * the classification;
-   * the evidence supporting that classification;
-   * which parts of the plan need revision.
+   - the discovered problem;
+   - the root cause;
+   - the classification;
+   - the evidence supporting that classification;
+   - which parts of the plan need revision.
 
 5. Revise the existing `.PLAN.md` in place according to the classification rules above.
 
@@ -137,21 +135,21 @@ If any of these checks fail, revise the plan again before finishing.
 
 ## Boundaries
 
-* Modify only the referenced implementation plan.
-* Do not modify source code.
-* Do not implement or re-fix the bug.
-* Do not commit or push changes.
-* Do not create a second version of the plan unless explicitly requested.
-* Do not guess when the codebase can answer the question.
-* If classification or the correct revised behavior cannot be determined from the plan, code, history, tests, or fix, ask the user rather than inventing an answer.
+- Modify only the referenced implementation plan.
+- Do not modify source code.
+- Do not implement or re-fix the bug.
+- Do not commit or push changes.
+- Do not create a second version of the plan unless explicitly requested.
+- Do not guess when the codebase can answer the question.
+- If classification or the correct revised behavior cannot be determined from the plan, code, history, tests, or fix, ask the user rather than inventing an answer.
 
 ## Completion
 
 State:
 
-* the classification;
-* what was changed in the plan;
-* what validation was added or strengthened;
-* the project-relative path of the revised plan.
+- the classification;
+- what was changed in the plan;
+- what validation was added or strengthened;
+- the project-relative path of the revised plan.
 
 The revised `.PLAN.md` is now the canonical implementation contract for future implementation and review sessions.
